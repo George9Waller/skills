@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "markers": {
+    "django": {"dependencies": ["django"]},
+    "drf": {"dependencies": ["djangorestframework"]},
+    "fastapi": {"dependencies": ["fastapi"]},
+    "celery": {"dependencies": ["celery"]},
+    "mysql": {"dependencies": ["mysqlclient"]},
+    "postgres": {"dependencies": ["psycopg", "psycopg2"]},
+    "redis": {"dependencies": ["redis"]},
+    "opensearch": {"dependencies": ["opensearch-py"]},
+    "elasticsearch": {"dependencies": ["elasticsearch"]},
+    "react": {"dependencies": ["react"]},
+    "typescript": {"dependencies": ["typescript"], "filenames": ["tsconfig.json"], "extensions": [".ts", ".tsx"]},
+    "pulumi": {"filenames": ["Pulumi.yaml", "Pulumi.yml"]},
+    "terraform": {"extensions": [".tf", ".tfvars"], "filenames": ["terraform.tf"]},
+    "databricks_bundle": {"filenames": ["databricks.yml", "databricks.yaml", "bundle.yml", "bundle.yaml"], "manifest_markers": {"databricks.yml": ["bundle:"], "bundle.yml": ["bundle:"]}},
+    "go": {"filenames": ["go.mod"], "extensions": [".go"]}
+  },
+  "rollups": {
+    "has_api_surface": ["drf", "fastapi"],
+    "has_database": ["django", "mysql", "postgres"],
+    "has_async_workers": ["celery"],
+    "has_deployment_config": ["pulumi", "terraform", "databricks_bundle"],
+    "has_iac": ["terraform", "databricks_bundle", "pulumi"]
+  }
+}

@@ -1,0 +1,21 @@
+[project]
+name = "gw-code-review"
+version = "0.1.0"
+description = "Deterministic context tools for gw-code-review: change graphs, bounded source queries, contract diffing, and technology detection."
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=2,<3",
+    "pydantic>=2",
+    "pyyaml",
+]
+
+# The server is a flat script (mcp_server.py) that puts its own directory on
+# sys.path and imports the local `tools/` package directly, so there is nothing
+# here to build or install as a distribution. `package = false` tells uv to
+# resolve and install the dependencies into .venv without invoking a build
+# backend on this project.
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
